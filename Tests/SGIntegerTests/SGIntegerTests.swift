@@ -1,11 +1,6 @@
 import Testing
 @testable import SGInteger
 
-@Test func example() async throws {
-    // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-  
-}
-
 @Test func testBinary() async throws {
 
   for x : UInt8 in 0 ... 0xff {
