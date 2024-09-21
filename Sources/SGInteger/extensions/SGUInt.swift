@@ -34,11 +34,11 @@ import Foundation
 
 // MARK: UInt64
 
-extension UInt64 {
+public extension UInt64 {
   
   // MARK: Constructors
   
-  public init?(hex:String) {
+  init?(hex:String) {
     
     self.init()
     
@@ -51,7 +51,7 @@ extension UInt64 {
     
   }
 
-  public init?(hex:String.SubSequence) {
+  init?(hex:String.SubSequence) {
     
     self.init()
     
@@ -64,7 +64,7 @@ extension UInt64 {
 
   }
   
-  public init?(dotHex:String, numberOfBytes:Int = MemoryLayout<UInt64>.size) {
+  init?(dotHex:String, numberOfBytes:Int = MemoryLayout<UInt64>.size) {
     
     guard (1 ... MemoryLayout<UInt64>.size) ~= numberOfBytes else {
       return nil
@@ -101,7 +101,7 @@ extension UInt64 {
     
   }
   
-  public init?(binary:String) {
+  init?(binary:String) {
     
     self.init()
     
@@ -114,7 +114,7 @@ extension UInt64 {
     
   }
 
-  public init?(binary:String.SubSequence) {
+  init?(binary:String.SubSequence) {
     
     self.init()
     
@@ -127,7 +127,7 @@ extension UInt64 {
 
   }
   
-  public init?(bigEndianData: [UInt8]) {
+  init?(bigEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt64>.size) ~= bigEndianData.count else {
       return nil
@@ -146,7 +146,7 @@ extension UInt64 {
     
   }
   
-  public init?(littleEndianData: [UInt8]) {
+  init?(littleEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt64>.size) ~= littleEndianData.count else {
       return nil
@@ -167,7 +167,7 @@ extension UInt64 {
 
   // MARK: Public Properties
   
-  public var littleEndianData : [UInt8] {
+  var littleEndianData : [UInt8] {
   
     var data : [UInt8] = []
     
@@ -182,13 +182,13 @@ extension UInt64 {
     
   }
   
-  public var bigEndianData : [UInt8] {
+  var bigEndianData : [UInt8] {
     return littleEndianData.reversed()
   }
   
   // MARK: Public Methods
   
-  public func hex(numberOfBytes:Int = MemoryLayout<UInt64>.size, numberPrefix:String = "") -> String? {
+  func hex(numberOfBytes:Int = MemoryLayout<UInt64>.size, numberPrefix:String = "") -> String? {
     
     guard (1 ... MemoryLayout<UInt64>.size) ~= numberOfBytes else {
       return nil
@@ -206,7 +206,7 @@ extension UInt64 {
     
   }
   
-  public func dotHex(numberOfBytes:Int = MemoryLayout<UInt64>.size) -> String? {
+  func dotHex(numberOfBytes:Int = MemoryLayout<UInt64>.size) -> String? {
 
     guard (1 ... MemoryLayout<UInt64>.size) ~= numberOfBytes, var hex = self.hex(numberOfBytes: numberOfBytes) else {
       return nil
@@ -226,7 +226,7 @@ extension UInt64 {
     
   }
   
-  public func binary(numberOfBytes:Int = MemoryLayout<UInt64>.size, numberPrefix:String = "") -> String? {
+  func binary(numberOfBytes:Int = MemoryLayout<UInt64>.size, numberPrefix:String = "") -> String? {
     
     guard (1 ... MemoryLayout<UInt64>.size) ~= numberOfBytes else {
       return nil
@@ -248,11 +248,11 @@ extension UInt64 {
 
 // MARK: UInt32
 
-extension UInt32 {
+public extension UInt32 {
   
   // MARK: Constructors
   
-  public init?(hex:String) {
+  init?(hex:String) {
     
     self.init()
     
@@ -265,7 +265,7 @@ extension UInt32 {
     
   }
 
-  public init?(hex:String.SubSequence) {
+  init?(hex:String.SubSequence) {
     
     self.init()
     
@@ -278,7 +278,7 @@ extension UInt32 {
 
   }
   
-  public init?(binary:String) {
+  init?(binary:String) {
     
     self.init()
     
@@ -291,7 +291,7 @@ extension UInt32 {
     
   }
 
-  public init?(binary:String.SubSequence) {
+  init?(binary:String.SubSequence) {
     
     self.init()
     
@@ -304,7 +304,7 @@ extension UInt32 {
 
   }
   
-  public init?(bigEndianData: [UInt8]) {
+  init?(bigEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt32>.size) ~= bigEndianData.count else {
       return nil
@@ -323,7 +323,7 @@ extension UInt32 {
     
   }
   
-  public init?(littleEndianData: [UInt8]) {
+  init?(littleEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt32>.size) ~= littleEndianData.count else {
       return nil
@@ -344,7 +344,7 @@ extension UInt32 {
 
   // MARK: Public Properties
   
-  public var littleEndianData : [UInt8] {
+  var littleEndianData : [UInt8] {
   
     var data : [UInt8] = []
     
@@ -359,13 +359,13 @@ extension UInt32 {
     
   }
   
-  public var bigEndianData : [UInt8] {
+  var bigEndianData : [UInt8] {
     return littleEndianData.reversed()
   }
   
   // MARK: Public Methods
   
-  public func hex(numberOfBytes:Int = MemoryLayout<UInt32>.size, numberPrefix:String = "") -> String? {
+  func hex(numberOfBytes:Int = MemoryLayout<UInt32>.size, numberPrefix:String = "") -> String? {
     
     guard (1 ... MemoryLayout<UInt32>.size) ~= numberOfBytes else {
       return nil
@@ -383,7 +383,7 @@ extension UInt32 {
     
   }
   
-  public func binary(numberOfBytes:Int = MemoryLayout<UInt32>.size, numberPrefix:String = "") -> String? {
+  func binary(numberOfBytes:Int = MemoryLayout<UInt32>.size, numberPrefix:String = "") -> String? {
     
     guard (1 ... MemoryLayout<UInt32>.size) ~= numberOfBytes else {
       return nil
@@ -405,11 +405,11 @@ extension UInt32 {
 
 // MARK: UInt16
 
-extension UInt16 {
+public extension UInt16 {
   
   // MARK: Constructors
   
-  public init?(hex:String) {
+  init?(hex:String) {
     
     self.init()
     
@@ -422,7 +422,7 @@ extension UInt16 {
     
   }
 
-  public init?(hex:String.SubSequence) {
+  init?(hex:String.SubSequence) {
     
     self.init()
     
@@ -435,7 +435,7 @@ extension UInt16 {
 
   }
   
-  public init?(binary:String) {
+  init?(binary:String) {
     
     self.init()
     
@@ -448,7 +448,7 @@ extension UInt16 {
     
   }
 
-  public init?(binary:String.SubSequence) {
+  init?(binary:String.SubSequence) {
     
     self.init()
     
@@ -461,7 +461,7 @@ extension UInt16 {
 
   }
   
-  public init?(bigEndianData: [UInt8]) {
+  init?(bigEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt16>.size) ~= bigEndianData.count else {
       return nil
@@ -480,7 +480,7 @@ extension UInt16 {
     
   }
   
-  public init?(littleEndianData: [UInt8]) {
+  init?(littleEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt16>.size) ~= littleEndianData.count else {
       return nil
@@ -501,7 +501,7 @@ extension UInt16 {
 
   // MARK: Public Properties
   
-  public var littleEndianData : [UInt8] {
+  var littleEndianData : [UInt8] {
   
     var data : [UInt8] = []
     
@@ -516,13 +516,13 @@ extension UInt16 {
     
   }
   
-  public var bigEndianData : [UInt8] {
+  var bigEndianData : [UInt8] {
     return littleEndianData.reversed()
   }
   
   // MARK: Public Methods
   
-  public func hex(numberOfBytes:Int = MemoryLayout<UInt16>.size, numberPrefix:String = "") -> String? {
+  func hex(numberOfBytes:Int = MemoryLayout<UInt16>.size, numberPrefix:String = "") -> String? {
     
     guard (1 ... MemoryLayout<UInt16>.size) ~= numberOfBytes else {
       return nil
@@ -540,7 +540,7 @@ extension UInt16 {
     
   }
   
-  public func binary(numberOfBytes:Int = MemoryLayout<UInt16>.size, numberPrefix:String = "") -> String? {
+  func binary(numberOfBytes:Int = MemoryLayout<UInt16>.size, numberPrefix:String = "") -> String? {
     
     guard (1 ... MemoryLayout<UInt16>.size) ~= numberOfBytes else {
       return nil
@@ -562,11 +562,11 @@ extension UInt16 {
 
 // MARK: UInt8
 
-extension UInt8 {
+public extension UInt8 {
   
   // MARK: Constructors
   
-  public init?(hex:String) {
+  init?(hex:String) {
     
     self.init()
     
@@ -579,7 +579,7 @@ extension UInt8 {
     
   }
 
-  public init?(hex:String.SubSequence) {
+  init?(hex:String.SubSequence) {
     
     self.init()
     
@@ -592,7 +592,7 @@ extension UInt8 {
 
   }
   
-  public init?(binary:String) {
+  init?(binary:String) {
     
     self.init()
     
@@ -605,7 +605,7 @@ extension UInt8 {
     
   }
 
-  public init?(binary:String.SubSequence) {
+  init?(binary:String.SubSequence) {
     
     self.init()
     
@@ -618,7 +618,7 @@ extension UInt8 {
 
   }
   
-  public init?(bigEndianData: [UInt8]) {
+  init?(bigEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt8>.size) ~= bigEndianData.count else {
       return nil
@@ -630,7 +630,7 @@ extension UInt8 {
     
   }
   
-  public init?(littleEndianData: [UInt8]) {
+  init?(littleEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt8>.size) ~= littleEndianData.count else {
       return nil
@@ -644,22 +644,22 @@ extension UInt8 {
 
   // MARK: Public Properties
   
-  public var littleEndianData : [UInt8] {
+  var littleEndianData : [UInt8] {
     return [self]
   }
   
-  public var bigEndianData : [UInt8] {
+  var bigEndianData : [UInt8] {
     return [self]
   }
   
   // MARK: Public Methods
   
-  public func hex(numberPrefix:String = "") -> String {
+  func hex(numberPrefix:String = "") -> String {
     let temp = String(self, radix: 16)
     return numberPrefix + String("\(String(repeating: "0", count: 2 - temp.count))\(temp)".suffix(2))
   }
   
-  public func binary(numberPrefix:String = "") -> String {
+  func binary(numberPrefix:String = "") -> String {
     let temp = String(self, radix: 2)
     return numberPrefix + String("\(String(repeating: "0", count: 8 - temp.count))\(temp)".suffix(8))
   }
