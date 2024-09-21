@@ -38,7 +38,7 @@ extension Int64 {
   
   // MARK: Constructors
   
-  init?(hex:String) {
+  public init?(hex:String) {
     
     self.init()
     
@@ -51,7 +51,7 @@ extension Int64 {
     
   }
 
-  init?(hex:String.SubSequence) {
+  public init?(hex:String.SubSequence) {
     
     self.init()
     
@@ -64,7 +64,7 @@ extension Int64 {
 
   }
   
-  init?(dotHex:String, numberOfBytes:Int = MemoryLayout<UInt64>.size) {
+  public init?(dotHex:String, numberOfBytes:Int = MemoryLayout<UInt64>.size) {
     
     guard (1 ... MemoryLayout<UInt64>.size) ~= numberOfBytes else {
       return nil
@@ -101,7 +101,7 @@ extension Int64 {
     
   }
   
-  init?(binary:String) {
+  public init?(binary:String) {
     
     self.init()
     
@@ -114,7 +114,7 @@ extension Int64 {
     
   }
 
-  init?(binary:String.SubSequence) {
+  public init?(binary:String.SubSequence) {
     
     self.init()
     
@@ -127,7 +127,7 @@ extension Int64 {
 
   }
   
-  init?(bigEndianData: [UInt8]) {
+  public init?(bigEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt64>.size) ~= bigEndianData.count else {
       return nil
@@ -146,7 +146,7 @@ extension Int64 {
     
   }
   
-  init?(littleEndianData: [UInt8]) {
+  public init?(littleEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt64>.size) ~= littleEndianData.count else {
       return nil
@@ -252,7 +252,7 @@ extension Int32 {
   
   // MARK: Constructors
   
-  init?(hex:String) {
+  public init?(hex:String) {
     
     self.init()
     
@@ -265,7 +265,7 @@ extension Int32 {
     
   }
 
-  init?(hex:String.SubSequence) {
+  public init?(hex:String.SubSequence) {
     
     self.init()
     
@@ -278,7 +278,7 @@ extension Int32 {
 
   }
   
-  init?(binary:String) {
+  public init?(binary:String) {
     
     self.init()
     
@@ -291,7 +291,7 @@ extension Int32 {
     
   }
 
-  init?(binary:String.SubSequence) {
+  public init?(binary:String.SubSequence) {
     
     self.init()
     
@@ -304,7 +304,7 @@ extension Int32 {
 
   }
   
-  init?(bigEndianData: [UInt8]) {
+  public init?(bigEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt32>.size) ~= bigEndianData.count else {
       return nil
@@ -323,7 +323,7 @@ extension Int32 {
     
   }
   
-  init?(littleEndianData: [UInt8]) {
+  public init?(littleEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt32>.size) ~= littleEndianData.count else {
       return nil
@@ -409,7 +409,7 @@ extension Int16 {
   
   // MARK: Constructors
   
-  init?(hex:String) {
+  public init?(hex:String) {
     
     self.init()
     
@@ -422,7 +422,7 @@ extension Int16 {
     
   }
 
-  init?(hex:String.SubSequence) {
+  public init?(hex:String.SubSequence) {
     
     self.init()
     
@@ -435,7 +435,7 @@ extension Int16 {
 
   }
   
-  init?(binary:String) {
+  public init?(binary:String) {
     
     self.init()
     
@@ -448,7 +448,7 @@ extension Int16 {
     
   }
 
-  init?(binary:String.SubSequence) {
+  public init?(binary:String.SubSequence) {
     
     self.init()
     
@@ -461,7 +461,7 @@ extension Int16 {
 
   }
   
-  init?(bigEndianData: [UInt8]) {
+  public init?(bigEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt16>.size) ~= bigEndianData.count else {
       return nil
@@ -480,7 +480,7 @@ extension Int16 {
     
   }
   
-  init?(littleEndianData: [UInt8]) {
+  public init?(littleEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt16>.size) ~= littleEndianData.count else {
       return nil
@@ -566,7 +566,7 @@ extension Int8 {
   
   // MARK: Constructors
   
-  init?(hex:String) {
+  public init?(hex:String) {
     
     self.init()
     
@@ -579,7 +579,7 @@ extension Int8 {
     
   }
 
-  init?(hex:String.SubSequence) {
+  public init?(hex:String.SubSequence) {
     
     self.init()
     
@@ -592,7 +592,7 @@ extension Int8 {
 
   }
   
-  init?(binary:String) {
+  public init?(binary:String) {
     
     self.init()
     
@@ -605,7 +605,7 @@ extension Int8 {
     
   }
 
-  init?(binary:String.SubSequence) {
+  public init?(binary:String.SubSequence) {
     
     self.init()
     
@@ -618,7 +618,7 @@ extension Int8 {
 
   }
   
-  init?(bigEndianData: [UInt8]) {
+  public init?(bigEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt8>.size) ~= bigEndianData.count else {
       return nil
@@ -630,7 +630,7 @@ extension Int8 {
     
   }
   
-  init?(littleEndianData: [UInt8]) {
+  public init?(littleEndianData: [UInt8]) {
     
     guard (1 ... MemoryLayout<UInt8>.size) ~= littleEndianData.count else {
       return nil
