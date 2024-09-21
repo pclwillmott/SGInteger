@@ -64,7 +64,7 @@ extension UInt64 {
 
   }
   
-  init?(dotHex:String, numberOfBytes:Int = MemoryLayout<UInt64>.size) {
+  public init?(dotHex:String, numberOfBytes:Int = MemoryLayout<UInt64>.size) {
     
     guard (1 ... MemoryLayout<UInt64>.size) ~= numberOfBytes else {
       return nil
